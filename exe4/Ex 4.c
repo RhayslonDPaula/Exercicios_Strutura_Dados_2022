@@ -74,6 +74,7 @@ void troca (int *x,int *y){
   aux= *x;
   *x = *y;
   *y =aux;
+
 }
 void imprime(int vet[]) {
   int i;
