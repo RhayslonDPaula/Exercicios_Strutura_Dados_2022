@@ -7,17 +7,26 @@
 
 3-)  Utilizando  o  método  de  inserção,  quantas  trocas  serão  realizadas  para  ordenar  em  ordem 
 crescente o vetor [7,  6,  5,  4,  3,  2,  1]? 
+
+4-) Utilizando o método de ordenação por seleção, qual será a ordem do vetor [72,  83,  17,  75,  
+31,  30] após o algoritmo realizar 3 trocas (ordenação crescente)?
+
+5-)  Aplicando  o  método  quicksort  no  vetor  [7,  11,  14,  6,  9,  4,  3,  12].  Considerando  que  o  pivô 
+selecionado é o primeiro elemento, qual será sua posição no vetor após a primeira iteração?
+
 */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-# define N 6
-# define NE 7
+# define N 6,NE 7
+
 
 void ex1 (int b[]);
 void ex2 (int o[]);
 void ex3 (int h[]);
+void ex4 (int a[]);
+void ex5 (int b1[]);
 void troca (int *x,int *y);
 void imprime(int vet[]);
 
@@ -32,9 +41,15 @@ int main(int argc, char const *argv[])
   //int t[] = {0,52,86,34,82,7,5};
   //ex2(t);
 
-  int p[] = {7,  6,  5,  4,  3,  2,  1};
+  //int p[] = {7,  6,  5,  4,  3,  2,  1};
 
-  ex3(p);
+  //ex3(p);
+
+  //int f[] = {72,83,17,75,31,30};
+
+  //ex4(f);
+
+  int v1[] = {7,  11,  14,  6,  9,  4,  3,  12}
   
   return 0;
 }
@@ -111,4 +126,39 @@ void ex3(int h[]){
     printf("Trocas:%d\n",trocas);
   }
   
+}
+
+void ex4 (int a[]){
+
+  int i,j,mi,t = 0,c = 0;
+
+  for ( i = 0; i < N-1; i++)
+  {
+    if (i <= 2)
+    {
+      printf ("Interacao %d:\n",i+1);
+    }
+    mi = i;
+    for ( j=i+1; j < N; j++)
+    {
+      c++;
+      if (a[j]< a[mi])
+      {
+        mi = j;
+      }
+      
+    }
+    troca(&a[mi],&a[i]);
+    t++;
+    if (i <= 2)
+    {
+    imprime(a);
+    printf("\n");
+    }
+  }
+  printf("Resumo: \n %d Comparacoes \n %d Trocas\n",c,t);
+}
+
+void ex5 (int b1[]){
+
 }
