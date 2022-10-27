@@ -4,6 +4,9 @@
 
 2-) Utilizando o método bolha, quantas trocas são necessárias para que a sequência [0  52  86  34  
 82  7  5] seja ordenada de modo decrescente?
+
+3-)  Utilizando  o  método  de  inserção,  quantas  trocas  serão  realizadas  para  ordenar  em  ordem 
+crescente o vetor [7,  6,  5,  4,  3,  2,  1]? 
 */
 
 #include <stdio.h>
@@ -12,19 +15,24 @@
 # define N 6
 
 void ex1 (int b[]);
-void ex2 (int o);
+void ex2 (int o[]);
+void ex3 (int h[]);
 void troca (int *x,int *y);
 void imprime(int vet[]);
 int main(int argc, char const *argv[])
 {
   
-  int v[] = {66,84,4,21,71,40};
-  imprime(v);
-  ex1(v);
-  imprime(v);
+  //int v[] = {66,84,4,21,71,40};
+  //imprime(v);
+  //ex1(v);
+  //imprime(v);
+
   int t[] = {0,52,86,34,82,7,5};
- 
-  exe2(t);
+  ex2(t);
+
+  //int p[] = {7,  6,  5,  4,  3,  2,  1}
+
+ // ex3(p);
   return 0;
 }
 void ex1(int b[]){
@@ -42,7 +50,8 @@ for ( i = 0; i < N; i++)
   }
   
 }
-void ex2 (int o){
+
+void ex2 (int o[]){
   int i,j,u=0;
   for ( i = 0; i < N; i++)
   {
@@ -73,4 +82,6 @@ void imprime(int vet[]) {
   }
   printf("\n");
 }
-  
+void ex3(int h[]){
+
+}
