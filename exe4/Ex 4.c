@@ -13,12 +13,14 @@ crescente o vetor [7,  6,  5,  4,  3,  2,  1]?
 #include <stdlib.h>
 #include <time.h>
 # define N 6
+# define NE 7
 
 void ex1 (int b[]);
 void ex2 (int o[]);
 void ex3 (int h[]);
 void troca (int *x,int *y);
 void imprime(int vet[]);
+
 int main(int argc, char const *argv[])
 {
   
@@ -27,14 +29,16 @@ int main(int argc, char const *argv[])
   //ex1(v);
   //imprime(v);
 
-  int t[] = {0,52,86,34,82,7,5};
-  ex2(t);
+  //int t[] = {0,52,86,34,82,7,5};
+  //ex2(t);
 
-  //int p[] = {7,  6,  5,  4,  3,  2,  1}
+  int p[] = {7,  6,  5,  4,  3,  2,  1};
 
- // ex3(p);
+  ex3(p);
+  
   return 0;
 }
+
 void ex1(int b[]){
   int i,j;
 for ( i = 0; i < N; i++)
@@ -50,12 +54,13 @@ for ( i = 0; i < N; i++)
   }
   
 }
+}
 
-void ex2 (int o[]){
+void ex2(int o[]){
   int i,j,u=0;
-  for ( i = 0; i < N; i++)
+  for ( i = 0; i < NE; i++)
   {
-    for ( j = 1; j < N; j++)
+    for ( j = 1; j < NE; j++)
     {
       if (o[j-1] < o[j])
       {
@@ -66,9 +71,9 @@ void ex2 (int o[]){
     }
     
   }
-  printf("numero de trocas%d",u);
+  printf("numero de trocas %d",u);
 }
-}
+
 void troca (int *x,int *y){
   int aux;
   aux= *x;
@@ -76,6 +81,7 @@ void troca (int *x,int *y){
   *y =aux;
 
 }
+
 void imprime(int vet[]) {
   int i;
   for (i=0; i<N; i++) {
@@ -83,6 +89,26 @@ void imprime(int vet[]) {
   }
   printf("\n");
 }
-void ex3(int h[]){
 
+void ex3(int h[]){
+  int i,j,flag = 0,trocas = 0;
+  for (i = 1; i < NE; i++)
+  {
+    printf ("interacao %d:\n",i);
+    flag = 0;
+    for ( j=i ; j>0 && h[j] < h[j-1]; j--)
+    {
+      troca (&h[j-1],&h[j]);
+      trocas++;
+      imprime(h);
+      flag = 1;
+    }
+    if (flag == 0)
+      imprime(h);
+    {
+      printf("\n");
+    }
+    printf("Trocas:%d\n",trocas);
+  }
+  
 }
