@@ -20,7 +20,7 @@ selecionado é o primeiro elemento, qual será sua posição no vetor após a pr
 #include <stdlib.h>
 #include <time.h>
 # define N 6,NE 7
-
+# define NE 7
 
 void ex1 (int b[]);
 void ex2 (int o[]);
