@@ -25,6 +25,7 @@ selecionado é o primeiro elemento, qual será sua posição no vetor após a pr
 void ex1 (int b[]);
 void ex2 (int o[]);
 void ex3 (int h[]);
+void t();
 void ex4 (int a[]);
 void ex5 (int b1[]);
 void troca (int *x,int *y);
